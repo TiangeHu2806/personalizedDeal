@@ -15,7 +15,7 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 @RestController
 @RequestMapping(PERSONAL_DEAL)
 public class PersonalDealController extends AbstractBaseApiController {
-    public static final String PERSONAL_DEAL = "/products";
+    public static final String PERSONAL_DEAL = "/personalizedDeal";
 
     private final PersonalizedDealService personalizedDealService;
 
@@ -24,7 +24,7 @@ public class PersonalDealController extends AbstractBaseApiController {
         this.personalizedDealService = personalizedDealService;
     }
 
-    @GetMapping(value = "/{visitorId}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @GetMapping(value = "/{visitorId}")
     public Object getProduct(@PathVariable final String visitorId) {
         return personalizedDealService.getPersonalizedDeals(visitorId)
                 .orElse(new ResponseEntity<>(NOT_FOUND));

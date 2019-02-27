@@ -8,6 +8,6 @@ import java.util.Optional;
 @Service
 public class PersonalizedDealService {
     public Optional<Object> getPersonalizedDeals(final String visitorId) {
-        return null;
+        return Optional.of(visitorId);
     }
 }
