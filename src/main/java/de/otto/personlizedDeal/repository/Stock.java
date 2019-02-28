@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Bestand {
+public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer artikelnummer;
-    private Integer bestand;
+    private Integer articlenumber;
+    private Integer quantity;
 
-    public Bestand() {
+    public Stock() {
 
     }
 
@@ -27,19 +27,19 @@ public class Bestand {
         this.id = id;
     }
 
-    public Integer getBestand() {
-        return bestand;
+    public Integer getArticlenumber() {
+        return articlenumber;
     }
 
-    public void setBestand(Integer bestand) {
-        this.bestand = bestand;
+    public void setArticlenumber(Integer articlenumber) {
+        this.articlenumber = articlenumber;
     }
 
-    public Integer getArtikelnummer() {
-        return artikelnummer;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setArtikelnummer(Integer artikelnummer) {
-        this.artikelnummer = artikelnummer;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }

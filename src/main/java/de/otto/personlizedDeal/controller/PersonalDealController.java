@@ -1,9 +1,8 @@
 package de.otto.personlizedDeal.controller;
 
-import de.otto.personlizedDeal.repository.Bestand;
+import de.otto.personlizedDeal.repository.Stock;
 import de.otto.personlizedDeal.service.PersonalizedDealService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,7 +33,7 @@ public class PersonalDealController extends AbstractBaseApiController {
     }
 
     @GetMapping
-    public List<Bestand> getBestaende() {
+    public List<Stock> getBestaende() {
         return personalizedDealService.getBestand();
     }
 }

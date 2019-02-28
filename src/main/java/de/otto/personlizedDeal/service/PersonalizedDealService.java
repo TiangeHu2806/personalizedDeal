@@ -1,7 +1,7 @@
 package de.otto.personlizedDeal.service;
 
-import de.otto.personlizedDeal.repository.Bestand;
-import de.otto.personlizedDeal.repository.PersonalizedDealRepository;
+import de.otto.personlizedDeal.repository.Stock;
+import de.otto.personlizedDeal.repository.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +12,9 @@ import java.util.Optional;
 public class PersonalizedDealService {
 
     @Autowired
-    private PersonalizedDealRepository repository;
+    private StockRepository repository;
 
-    public List<Bestand> getBestand() {
+    public List<Stock> getBestand() {
         return repository.findAll();
     }
 

@@ -4,7 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface PersonalizedDealRepository extends CrudRepository<Bestand, Long> {
+public interface StockRepository extends CrudRepository<Stock, Long> {
 
-    List<Bestand> findAll();
+    List<Stock> findAll();
 }
