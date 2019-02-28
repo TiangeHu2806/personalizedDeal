@@ -1,5 +1,6 @@
 package de.otto.personlizedDeal.controller;
 
+import de.otto.personlizedDeal.repository.Bestand;
 import de.otto.personlizedDeal.service.PersonalizedDealService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 import static de.otto.personlizedDeal.controller.PersonalDealController.PERSONAL_DEAL;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
@@ -28,5 +31,10 @@ public class PersonalDealController extends AbstractBaseApiController {
     public Object getProduct(@PathVariable final String visitorId) {
         return personalizedDealService.getPersonalizedDeals(visitorId)
                 .orElse(new ResponseEntity<>(NOT_FOUND));
+    }
+
+    @GetMapping
+    public List<Bestand> getBestaende() {
+        return personalizedDealService.getBestand();
     }
 }
